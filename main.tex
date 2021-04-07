@@ -1,1 +1,78 @@
-content
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage{lscape}
+\usepackage{mathpazo} % Palatino font
+
+
+\begin{document}
+\section{Introduction}
+
+Despite nuclear power’s massive potential to serve as a major source of clean energy around the world, its implementation is held back by a variety of factors. One such factor is public fear and misconception regarding the safety of nuclear power plants. To address this, and as a general feature of engineering, we have incentive to design new reactors with heightened safety features. One such proposal is a “fountain” style reactor, which is theoretically inherently low-risk due to its near-instantaneous ability to stop fissioning. The proposed design is a Molten Salt Reactor (MSR), effectively inverted compared to currently operating MSRs. While the features of this concept are attractive, a major concern regarding its plausibility is its requirement of an incredibly powerful and unique pump. Thus, this review seeks to determine the qualifications a pump must meet to be potentially usable in this design and to overview the current state of pump technologies that meet these requirements.
+
+
+\section{Key Findings}
+
+Based on the proposed “fountain” style reactor design [1], we determined that one of the main limiting factors of this reactor idea was the current state-of-the-art of pumping technology. A pump that would make this design feasible necessarily has a couple of distinct features. First, the pump must be applicable to a molten salt environment-- i.e. it must withstand temperatures in the neighborhood of 650℃ or greater. The pump must also be effectively “leak-proof,” as any leakage in the seals connecting the pump to the rest of the reactor would be detrimental [2]. Next, the pump must force a significant amount of weight into the space above the pump nozzle to create the critical region, as described by the design [1]. We can measure this strength using various parameters, one being volumetric flow rate. Finally, we discovered that the most challenging requirement of the pump was that it must produce a nearly perfect laminar flow. As the pump forces the molten salt containing fuel directly up into the gaseous interior of the reactor, any turbulence of this flow would create a massive safety hazard, almost certainly guaranteeing a lack of approval by the Nuclear Regulatory Commission (NRC). Thus, in addition to determining whether a pump exists with all of the aforementioned features, we also sought a pump that under the given conditions, could produce a nearly perfect laminar flow. Since we can evaluate the laminarity of a fluid quantitatively via its Reynolds number, we start with that equation in finding the parameters we need to assess the feasibility of the pump.
+
+$Re = \frac{\rho \cdot v \cdot L}{\mu}$
+
+In the equation above, $\rho$ is the fluid density, $ v $ is the flow speed, $L$ is the characteristic length, and $\mu$ is the dynamic viscosity. Fluids with Reynolds numbers less than 2000 are generally considered to have laminar flow, whereas those greater than 4000 are considered turbulent [3]. Numbers that fall between 2000 and 4000, while not necessarily turbulent, are still too inconsistent for the requirements of this reactor design. Since the issue of laminar versus turbulent flow for this pump is a critical consideration of safety, we have to prioritize the factors which contribute to reducing the Reynolds number. Because certain quantities in this equation are simply characteristics of the fuel (density and dynamic viscosity), we will focus largely on minimizing the velocity and characteristic length (v and L). Note on dynamic viscosity: it is inversely related to temperature, which is unfortunate as the temperature of this reactor design is quite high. A reactor design with cooler temperature parameters thus could prove more feasible.
+
+Furthermore, the characteristic length considered in this equation (L) is more so a function of the nozzle which the fuel is pumped through than a characteristic of the pump itself. This has not yet been explored and will require further research. Ultimately, this means that the factor of greatest concern in evaluating the pumps becomes the speed at which the pump operates (measured in rpm). Ideally, to reduce the Reynolds number and produce a laminar flow, we would like slower flow velocity. However, if the pump is moving the fluid too slowly, we bring its ability to maintain a “floating” critical region where fission can occur into question. Future research will have to analyze this further. Until then, based on the pumps we’ve evaluated thus far, the most plausible pump for a fountain style reactor is the PKP centrifugal pump or the PKA centrifugal pump [2]. Both of these pumps have heads over 100m, which should help ensure enough time for fuel in the critical region to fission substantially. These pumps also have very high temperature ranges (up to 816℃) and maximum speeds of 3500 rpm. These pumps differ in their volumetric flow rate capabilities-- the PKP having the capacity to move 3x as much fluid in the same time. Therefore, between the two, we think the PKP pump will likely be better suited to the fountain reactor because of its notably higher strength. A comprehensive review of the state-of-the-art of pumps suitable for molten salt reactors was done at Oak Ridge National Laboratory in 2016 [2]. This review determined centrifugal pumps as the only type of pump worth considering for a molten salt reactor, accordingly, our review focused on these as well.
+
+Clearly, further research is needed to determine whether or not this pump can actually work in a safe way in the fountain style reactor. The purpose of this review was simply to evaluate the current state of pumps to determine if the fountain’s pumping needs are even in the realm of possibility. That being said, it may be plausible, but the technology to date is somewhat limited, especially since laminar flow is so crucial to this reactor’s functionality. Further research should also consider different nozzle types and how they would impact the characteristic length component of the Reynolds number equation, as well as how the properties and functionality of the pumps evaluated here might change due to scale and orientation.
+
+\newpage
+
+\section{Current Pumping Technologies}
+
+\begin{landscape}
+\begin{table}[ht]
+    \centering
+    \scalebox{0.7}{%
+    \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+      \hline
+          \textbf{pump type} & \textbf{specific pump} & \textbf{max. flow rate (m³/h)} & \textbf{max. velocity (rpm)} & \textbf{viscosity limits} & \textbf{max. temp. (°C)} & \textbf{head (m)} \\ \hline
+          canned motor & Flowserve SIHI Pumps & 650 & 3600 &  & 350 & 150 \\ \hline
+          centrifugal & SIHISuperNover ZTN series & 1000 & 3600 & highly-viscous products  & 350 & 95 \\ \hline
+           & Flowserve CA pump & 5250 & 6000 & designed for nuclear applications & 250 &  \\ \hline
+          wet-pit vertical  & Molten Salt VTP & 13600 &  & designed for molten salt & 600 & 530 \\ \hline
+          liquid ring vacuum & PL-904 Series & 22000 &  & "demanding industrial appliactions" &  &  \\ \hline
+          vertical immersion pump & ES000937 & 1160 &  & designed for nuclear applications &  & 360.89 ft \\ \hline
+          canned motor reactor pump & LUS & 576 &  &  & 300 & 175 \\ \hline
+          vertical wet-rotor & PSR & 9000 & 2000 & reactor coolant recirculation in BWRs & 300 & 45 \\ \hline
+          vertical wet-rotor & RUV & 22000 & 1800 & reactor coolant pump & 350 & 120 \\ \hline
+          high pressure charching  & RVM & 50 & 6000 &  & 100 & 2000 \\ \hline
+          vertical molten salt circulation & Sulzer & 4000 &  & designed for molten salt & 600 & 350 \\ \hline
+          centrifugal & LFB  & 1.1 & 6000 & fluid: molten flouride salt, Na, NaK & 760 & 28 \\ \hline
+          centrifugal & DANA & 34.1 & 3750 & fluid: molten flouride salt & 816 & 91 \\ \hline
+          centrifugal & DAC & 13.6 & 1450 & fluid: molten flouride salt & 760 & 15 \\ \hline
+          centrifugal & In-Pile Loop (LFA) & 0.2 & 3000 & fluid: molten flouride salt &  & 3 \\ \hline
+          centrifugal & MF & 159 & 3000 & fluid: molten flouride salt, NaK & 816 & 15 \\ \hline
+          centrifugal & PKA & 85.1 & 3550 & fluid: molten flouride salt, NaK & 816 & 122 \\ \hline
+          centrifugal & PKP & 341 & 3500 & fluid: molten flouride salt, NaK & 816 & 116 \\ \hline
+          centrifugal & MSRE Prototype - Fuel & 272 & 1150 & fluid: molten flouride salt & 816 & 15 \\ \hline
+          centrifugal & MSRE Test Stand - Fuel & 272 & 1150 & fluid: molten flouride salt & 704 & 15 \\ \hline
+          centrifugal & MSRE Operation - Fuel & 272 & 1175 & fluid: molten flouride salt & 663 & 15 \\ \hline
+          centrifugal & MSRE Test Stand - Coolant & 193 & 1750 & fluid: molten flouride salt & 704 & 30 \\ \hline
+          centrifugal & MSRE Operation - Coolant & 182 & 1775 & fluid: molten flouride salt & 691 & 24 \\ \hline
+          centrifugal & MSRE Mark-2 Fuel & 306 & 1165 & fluid: molten flouride salt & 732 & 16 \\ \hline
+          centrifugal & ALPHA & 6.8 & 6000 & fluid: molten flouride salt & 727 & 76 \\ \hline
+          centrifugal & Long-shaft pump & 59 & 1300 & fluid: molten flouride salt & 732 & 15 &  \\ \hline
+      \end{tabular}}
+\end{table}
+\end{landscape}
+
+\section{Sources}
+[1]
+C. Moyer, “Molten Salt Fountain Reactor Diagram no Cylinder Breed Blanket.” Private Communication, 2021. \newline
+
+[2]
+K. R. Robb, P. K. Jain, and T. J. Hazelwood, “High-Temperature Salt Pump Review and Guidelines - Phase I Report,” ORNL/TM--2016/199, 1257909, May 2016. doi: 10.2172/1257909. \newline
+
+[3]
+“Reynolds Number for Laminar Flow,” Nuclear Power, 25-Apr-2018. [Online]. Available: https://www.nuclear-power.net/nuclear-engineering/fluid-dynamics/reynolds-number/reynolds-number-for-laminar-flow/. [Accessed: 04-Apr-2021].
+
+\end{document}
